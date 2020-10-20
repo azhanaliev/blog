@@ -7,13 +7,17 @@
 {% block body %}
 <div class="container mt-5">
     <h1> Все статьи на сайте </h1>
-    {% for elem in articles%}
-    <div class="alert alert-info">
-        <h2> {{ elem.title }}  </h2>
-        <p> {{ elem.intro }} </p>
-        <p> <b> Дата: {{ elem.date.date() }}</b></p>
-        <a href="/posts/{{elem.id}}" class ="btn btn-warning"> Детальнее </a>
-    </div>
-    {% endfor%}
+    {% if articles|length > 0 %}
+        {% for elem in articles%}
+        <div class="alert alert-info">
+            <h2> {{ elem.title }} </h2>
+            <p> {{ elem.intro }} </p>
+            <p><b> Дата: {{ elem.date.date() }}</b></p>
+            <a href="/posts/{{elem.id}}" class="btn btn-warning"> Детальнее </a>
+        </div>
+        {% endfor%}
+    {% else %}
+        <p>У нас еще нет статей на сайте</p>
+    {% endif %}
 </div>
 {% endblock %}
