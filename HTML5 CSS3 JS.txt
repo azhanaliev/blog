@@ -1,0 +1,60 @@
+***https://www.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/**
+
+1. https://material.angular.io/guide/getting-started
+2. https://ionicframework.com/docs/api/grid
+
+#1 Введение в HTML
+
+#2 Отображение файла в интернете
+<html>  			<!--главный тег-->
+  <head> 			<!--шапка, подключение стилей и т.п.-->
+    <title>Example</title> 	<!--заголовок вкладки-->
+  </head>
+  <body> 			<!--тело html-->
+  Hello World!!!
+  </body>
+</html>
+
+#3 Языки для создания сайта
+Для создания сайта нужен HTML5 и CSS3
+<!DOCTYPE html> 		<!--в начале любого html5 кода-->
+<html>
+<head>
+  <title>Проверка</title>
+  <meta charset= "utf-8" /> 	<!--кодировка в HTML для правильного отображения-->
+</head>
+<body>
+  <p>Hello World!!!</p>  
+</body>
+</html>
+
+#4 Как создать комментарии
+
+<!-- комментарий -->
+
+#5 Теги для работы с текстом
+
+<p align="rigth, center, left, justify(по ширине)"> Абзац </p>
+<h1> Заголовок 1</h1> 				<!-- чем больше, тем меньше-->
+<strong> Жирный шрифт </strong>
+<b> Жирный шрифт </b>
+<em> Курсив </em>
+<i> Курсив </i>
+<strike> Перечеркнутый </strike>
+<p><abbr title="Example">HTML</abbr></p>	<!-- ТЭГ с подсказкой-->
+<address> Адрес </address>
+
+#6 Теги для текста(продолжение)
+<small> маленький </small>
+<big> большой </big>
+<pre> тег для кода и т.п. </pre>
+<blackquote cite="источник"> цитата </blackquote> 
+<q cite="источник"> кавычка </q>
+<hr горизонтальная линия /> 
+<br пустая строка/> 
+<center> по центру </center>
+
+HTML5 - НЕ МОЖЕТ СУЩЕСТВОВАТЬ БЕЗ CCS3
+
+
+ 

@@ -1,4 +1,6 @@
-#Flask
+						    #############
+						    ### Flask ###
+						    #############
 
 ######################### lesson 1 ### Создание веб сайта на python ###############################################
 @app.route('/')
@@ -13,6 +15,8 @@ if __name__ == '__main__'
 ИНТЕРПРИТАТОР медленнее КОМПИЛЯТОРА
 
 модуль Python - это файл python
+
+
 
 
 
@@ -42,6 +46,10 @@ if __name__ == '__main__':
 * <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}"> ===> подключение стилей в шаблон
 * <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 ==================> подключение стилей bootstrap <===================
+
+
+
+
 
 ######################### lesson 3 ### Работа с базой данных #######################################################
 
@@ -74,6 +82,9 @@ def create_article():
             return "При добавлении статьи произошла ошибка"
     else:
         return render_template('create-article.html')
+
+
+
 
 
 ######################### lesson 4 ### Отображение данных из БД (jinja - python) ###################################
@@ -112,8 +123,70 @@ def post_detail(id):
 </div>
 {% endblock %}
 
+
+
+
+
 ######################### lesson 5 ### Удаление и обновление БД ####################################################
 
+-------------------------------------------- Удаление поля по ID из БД ---------------------------------------------
 
+@app.route('/posts/<int:id>/del')
+def post_delete(id):
+    article = Article.query.get_or_404(id)
 
+    try:
+        db.session.delete(article)
+        db.session.commit()
+        return redirect('/posts')
+    except:
+        return 'При удалении статьи произошла ошибка'
 
+-------------------------------------------- Обновление полей по ID по БД ------------------------------------------
+
+@app.route('/posts/<int:id>/update', methods=['POST', 'GET'])
+def post_update(id):
+    article = Article.query.get(id)
+    if request.method == "POST":
+        article.title = request.form['title']
+        article.intro = request.form['intro']
+        article.text = request.form['text']
+
+        try:
+            db.session.commit()
+            return redirect('/posts')
+        except:
+            return "При редактировании статьи произошла ошибка"
+    else:
+
+        return render_template('post_update.html', article=article)
+
+-------------------------------------------- Если есть поля то отображаем их ---------------------------------------
+-------------------------------------------- Иначе пишем ошибку ----------------------------------------------------
+
+{% if articles|length > 0 %}
+        {% for elem in articles%}
+        <div class="alert alert-info">
+            <h2> {{ elem.title }} </h2>
+            <p> {{ elem.intro }} </p>
+            <p><b> Дата: {{ elem.date.date() }}</b></p>
+            <a href="/posts/{{elem.id}}" class="btn btn-warning"> Детальнее </a>
+        </div>
+        {% endfor%}
+    {% else %}
+        <p>У нас еще нет статей на сайте</p>
+    {% endif %}
+
+---------------------------------------------------- HTML ----------------------------------------------------------
+
+<div class="container mt-5">
+    <h1> Обновление статьи </h1>
+    <form method="post">
+        <input type="text" name="title" id="title" class="form-control" value="{{article.title}}" placeholder="Введите название"><br>
+        <textarea name="intro" id="intro" class="form-control" placeholder="Введите анонс">{{article.intro}}</textarea><br>
+        <textarea name="text" id="text" class="form-control" placeholder="Введите основной текст">{{article.text}}</textarea><br>
+        <input type="submit" class="btn btn-success" value="Обновить">
+    </form>
+</div>
+
+https://www.youtube.com/watch?v=6jxveKOdyNg&list=PLA0M1Bcd0w8yrxtwgqBvT6OM4HkOU3xYn
