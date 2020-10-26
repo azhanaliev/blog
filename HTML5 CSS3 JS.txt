@@ -56,5 +56,122 @@
 
 HTML5 - НЕ МОЖЕТ СУЩЕСТВОВАТЬ БЕЗ CCS3
 
+#7 Списки в HTML
+<nobr> все в одну строку </nobr> 
+<ol type="A" start="4" reversed = "reversed"> 		<!-- список-->
+  <li>первый пункт</li>					<!-- пункты-->	 
+  <li>второй пункт</li>
+  <li>третий пункт</li>
+ </ol>
 
- 
+<ul type="">						<!-- список не пронумерованный-->
+  <li>первый пункт</li>					<!-- пункты-->	 
+  <li>второй пункт</li>
+  <li>третий пункт</li>
+</ul>
+
+<dir type="">						<!-- список имеет больший отступ-->
+  <li>первый пункт</li>					<!-- пункты-->	 
+  <li>второй пункт</li>
+  <li>третий пункт</li>
+</dir>
+
+#8 Атрибуты HTML
+Это признаки тегов
+они меняют теги HTML
+<ol type="A" start="4" reversed = "reversed">  </ol>
+
+#9 Ссылки в языке HTML
+<a href="https://www.google.com" 
+target="_blank" title="Подсказка"> ссылка </a>  	<!-- ссылка-->
+<a href="#123"> Переход на заголовок 6</a>
+<a name="123"></a>
+# - решетка в ссылке означает, что страница не будет перезагружаться  
+<a href="mailto:adress@mail.ru"> Email </a> отправка письма на почту
+
+#10 Изображения в HTML
+<img src="https:/9.jpg" width="1" height="2" alt="замена картины текстом" title="Горы и т.п."/>
+
+#11 Таблицы HTML
+<table border="1">
+  <caption>Размеры</caption> 				<!-- заголовок-->
+  <tr>							<!-- строки-->
+    <th>A</th>
+    <th>B</th>
+    <th>C</th>
+  </tr>
+  <tr>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+  </tr>
+  </table>
+
+#12 Подключение файлов 
+<head>
+  <title>Проверка</title>
+  <meta http-equiv="Content-type" content="text/html; "charset= "utf-8" />  
+  <meta name="description" />
+  <meta name="keywords" />
+  <link href="подключение стилей" rel="stylesheet" type="text/css"/>
+  <script src="подключение скриптов JS"></script>
+</head>
+
+#13 Теги div и span
+<div>проверка1</div>                    <!--  делит строки-->
+<div>проверка2</div>  
+<span>проверка3</span> в стоку все 	<!--  в одну строку-->
+<span>проверка4</span>
+
+#14 Поля ввода HTML
+<form name="test" action="" method="post">
+  <input type="text" value="поле" placeholder="поиск.." name="name" title="Подсказка при наведении"/>
+  <label for="date"> День рождения: </label><input type="datetimelocal"/> 
+
+  <label for="date"> URL: </label><input type="url"/>
+
+  <label for="state"> Мужской: </label> <input type="radio" name="state"/>
+  <label for="state"> Женский: </label> <input type="radio" name="state"/>
+  <label for="state"> Отметить </label> <input type="checkbox"/>
+  <label for="state"> Кнопка </label> <input type="button"/>
+  <input type="reset" value="Очистить"/>
+</form>
+
+#15 Теги textarea и button
+<textarea placeholder="placeholder"> rows="10" </textarea>
+<button> Отправить </button>
+
+#16 Теги select и option
+<select multiple="multiple"> 			<!--  выпадающий список(мультипл выбирать несколько)-->
+    <option selected="selected">1</option>
+    <option>2</option>
+</select>
+
+#17 Специальные теги HTML5
+<audio controls="controls" autoplay="autoplay" loop="loop">
+  <source src="http://ссылка" />
+</audio>
+
+<video controls="controls">
+  <source src="http://ссылка" />  
+</video>
+
+#18 Теги sub и sup
+H<sub>2</sub>O				<!--  нижняя запись-->
+4<sup>2</sup>				<!--  число в квадрате-->
+
+#19 Специальные теги HTML5
+Проверка 123<mark> выделено </mark>
+
+<ruby>
+  qwert<rt>объяснение</rt>
+</ruby>
+
+<progress max="100" value="25">
+  Загружено на <span id="value">25</span>    	<!-- индикатор заполнения-->
+</progress>
+
+#20 Оптимизация сайта под разные браузеры
+проблемы начинаются в HTML5 тегах
+при написании сайта нужно как можно реже использовать HTML5 теги
+
